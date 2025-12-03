@@ -1,10 +1,11 @@
 # Parallel-Computing-Assignment3
-Overview
+# Overview
+
 This repository contains parallel implementations of the K-Means clustering algorithm using three different parallel programming paradigms:
 
-OpenMP: For shared-memory parallelism on multi-core CPUs.
-MPI: For distributed-memory parallelism across multiple processes (nodes).
-CUDA: For GPU acceleration using NVIDIA's CUDA toolkit.
+**OpenMP**: For shared-memory parallelism on multi-core CPUs.
+**MPI**: For distributed-memory parallelism across multiple processes (nodes).
+**CUDA**: For GPU acceleration using NVIDIA's CUDA toolkit.
 
 The implementations demonstrate how to parallelize the core steps of K-Means:
 
@@ -18,7 +19,7 @@ K: Number of clusters (default: 3).
 MAX_ITER: Maximum iterations (default: 100).
 N: Number of points (9 for CPU versions, 10,000 for GPU).
 
-Features
+# Features
 OpenMP Version: Uses #pragma omp parallel for for point assignment and array reductions for centroid updates. Tested with 1–16 threads.
 MPI Version: Distributes points across processes using MPI_Scatterv, local assignments, MPI_Allreduce for global sums, and MPI_Bcast for centroid synchronization. Tested with 1–16 processes.
 CUDA Version: Kernel-based parallelism for assignment and atomic operations for partial sums. Host-device memory transfers for updates. Tested with 128–1024 threads per block.
